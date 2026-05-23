@@ -74,6 +74,12 @@ def get_enquiry(
         .first()
     )
 
+    if not enquiry:
+        raise HTTPException(
+            status_code=404,
+            detail="Enquiry not found"
+        )
+
     return enquiry
 
 @router.post("/{id}/escalate")
@@ -105,6 +111,7 @@ def escalate_enquiry(
 
     db.add(event)
     db.commit()
+    db.refresh(enquiry)
 
     logger.info(
     "manual_escalation",

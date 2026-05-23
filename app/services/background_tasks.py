@@ -10,6 +10,13 @@ def process_enquiry(enquiry_id: int):
 
     db = SessionLocal()
 
+    logger.info(
+        "task_processing_started",
+        extra={
+            "enquiry_id": enquiry_id
+        }
+    )
+
     try:
 
         enquiry = (
@@ -38,12 +45,12 @@ def process_enquiry(enquiry_id: int):
             db.add(event)
 
             logger.info(
-                    "sop_matched",
-                    extra={
-                        "enquiry_id": enquiry.id,
-                        "matched_sop": result["matched_sop"]
-                    }
-                )
+                "sop_matched",
+                extra={
+                    "enquiry_id": enquiry.id,
+                    "matched_sop": result["matched_sop"]
+                }
+            )
 
         else:
 
@@ -56,12 +63,13 @@ def process_enquiry(enquiry_id: int):
             )
 
             db.add(event)
+
             logger.warning(
-            "auto_escalation_triggered",
-            extra={
-            "enquiry_id": enquiry.id,
-            "reason": "No SOP matched"
-            }
+                "auto_escalation_triggered",
+                extra={
+                    "enquiry_id": enquiry.id,
+                    "reason": "No SOP matched"
+                }
             )
 
         db.commit()
