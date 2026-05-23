@@ -5,7 +5,7 @@ from typing import Optional
 class EnquiryCreate(BaseModel):
     customer_name: str = Field(
         ...,
-        example="John Smith"
+        example="John Doe"
     )
 
     channel: str = Field(

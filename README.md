@@ -118,7 +118,7 @@ Request:
 
 ```json
 {
-  "customer_name": "Apoorva Badoni",
+  "customer_name": "John Doe",
   "channel": "whatsapp",
   "message": "What are your pricing plans?"
 }
@@ -387,6 +387,31 @@ Unhandled exceptions are not exposed to clients.
 
 ---
 
+## API Testing
+
+Example API requests are provided in:
+
+```text
+tests/tests.http
+```
+
+The file contains sample requests for all assignment endpoints:
+
+- GET /health
+- POST /enquiry
+- GET /enquiry/{id}
+- POST /enquiry/{id}/escalate
+- POST /enquiry/{id}/follow-up
+- GET /enquiry/{id}/history
+
+These requests can be executed directly using the VS Code REST Client extension or compatible HTTP clients.
+
+---
+
 ## Author
 
+**Apoorva Badoni**
+
 Backend Assignment Submission for Breakout
+
+GitHub: https://github.com/Oxide06

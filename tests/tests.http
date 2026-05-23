@@ -1,0 +1,45 @@
+### Health Check
+GET http://127.0.0.1:8000/health
+
+###
+
+### Create Enquiry
+POST http://127.0.0.1:8000/enquiry/
+Content-Type: application/json
+
+{
+    "customer_name": "John Doe",
+    "channel": "whatsapp",
+    "message": "What are your pricing plans?"
+}
+
+###
+
+### Get Enquiry
+GET http://127.0.0.1:8000/enquiry/1
+
+###
+
+### Escalate Enquiry
+POST http://127.0.0.1:8000/enquiry/1/escalate
+Content-Type: application/json
+
+{
+    "reason": "Customer requested human support"
+}
+
+###
+
+### Schedule Follow-up
+POST http://127.0.0.1:8000/enquiry/1/follow-up
+Content-Type: application/json
+
+{
+    "delay_minutes": 30,
+    "message_template": "Checking if you still need assistance."
+}
+
+###
+
+### History
+GET http://127.0.0.1:8000/enquiry/1/history
