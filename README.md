@@ -2,11 +2,11 @@
 
 ## Overview
 
-This project is a lightweight backend service that simulates Closira's customer enquiry-handling workflow.
+This is a simulation of backend service for Closira to manages customer inquiries.
 
-The system accepts inbound customer enquiries, processes them asynchronously, matches them against predefined SOPs, records conversation history, supports escalation to human agents, and allows follow-up scheduling.
+The system takes customer questions, processes them asynchronously behind the scenes, then match them with predefine Standard Operating Procedure (SOPs), tracks conversation history, allows for escalation to human agents, and even facilitates scheduling for follow-ups.
 
-The goal of the implementation is to demonstrate backend fundamentals, API design, asynchronous processing, database modeling, structured logging, and engineering decision-making.
+The aim of this implementation is to highlight key backend concepts, API design, asynchronous processing, database modeling, structured logging, and thoughtful engineering decision-making.
 
 ---
 
@@ -389,4 +389,4 @@ Unhandled exceptions are not exposed to clients.
 
 ## Author
 
-Backend Assignment Submission for Closira Engineering Internship.
+Backend Assignment Submission for Breakout
