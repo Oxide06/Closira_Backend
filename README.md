@@ -408,6 +408,15 @@ These requests can be executed directly using the VS Code REST Client extension 
 
 ---
 
+## Limitations
+
+- The Background Tasks are run in process and do not survive application restarts.
+- Follow-up scheduling is logged as an event, but is not performed by a dedicated scheduler.
+- SOP matching is done with simple keyword rules that might not be able to handle ambiguous messages.
+- Local development and assignment-scale loads are handled by SQLite.
+
+---
+
 ## Author
 
 **Apoorva Badoni**
